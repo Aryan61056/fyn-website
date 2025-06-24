@@ -4,9 +4,13 @@
 <head>
     <meta http-equiv="refresh" content="0; url=/fyn-website/" />
     <script>
-        // For client-side routing on GitHub Pages
-        var redirect = '/fyn-website' + location.pathname + location.search + location.hash;
-        location.replace(redirect);
+        // Only prepend /fyn-website if not already present
+        var prefix = '/fyn-website';
+        var path = location.pathname;
+        if (!path.startsWith(prefix)) {
+            var redirect = prefix + path + location.search + location.hash;
+            location.replace(redirect);
+        }
     </script>
 </head>
 
