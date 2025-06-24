@@ -2,15 +2,11 @@
 <html>
 
 <head>
-    <meta http-equiv="refresh" content="0; url=/fyn-website/" />
     <script>
-        // Only prepend /fyn-website if not already present
-        var prefix = '/fyn-website';
-        var path = location.pathname;
-        if (!path.startsWith(prefix)) {
-            var redirect = prefix + path + location.search + location.hash;
-            location.replace(redirect);
-        }
+        // Redirect all 404s to index.html, preserving path and hash for React Router
+        var pathname = location.pathname.replace(/^\/fyn-website/, '');
+        var newUrl = '/fyn-website/index.html' + pathname + location.search + location.hash;
+        location.replace(newUrl);
     </script>
 </head>
 
