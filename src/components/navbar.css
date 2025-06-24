@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+code,
+pre,
+kbd,
+samp {
+    font-family: 'JetBrains Mono', /* primary */
+    'SFMono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+    /* fall-backs */
+    font-size: 15px;
+    /* tweak to taste */
+    line-height: 1.45;
+    font-variant-ligatures: contextual;
+    /* keeps coding ligatures on */
+}
+
+.navbar {
+    background: linear-gradient(90deg, #232347 0%, #3e2067 100%);
+    /* higher contrast gradient */
+    /* keep padding as is */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(97, 218, 251, 0.16), 0 1.5px 8px rgba(30, 40, 80, 0.13);
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 40px);
+    max-width: 1200px;
+    z-index: 999;
+    transition: box-shadow 0.3s, background 0.3s, filter 0.3s;
+    animation: navbarFadeIn 1s cubic-bezier(.77, 0, .18, 1) 0.1s both;
+    backdrop-filter: blur(8px) saturate(1.2);
+}
+
+@keyframes navbarFadeIn {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateX(-50%) translateY(-30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.navbar:hover {
+    box-shadow: 0 8px 40px rgba(97, 218, 251, 0.18), 0 2px 16px rgba(30, 40, 80, 0.13);
+    filter: brightness(1.07) saturate(1.2);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    margin-right: 2rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+    padding: 6px 14px;
+}
+
+.nav-links li a:hover {
+    color: #61dafb;
+    background: rgba(97, 218, 251, 0.07);
+    box-shadow: 0 2px 12px rgba(97, 218, 251, 0.08);
+}
+
+.logo {
+    margin-left: 2rem;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: box-shadow 0.3s, background 0.3s;
+    background: transparent;
+    box-shadow: none;
+    /* Remove background and shadow so no outline is visible */
+}
+
+.logo img {
+    width: 75px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: none;
+    /* Remove logo outline/shadow */
+}
+
+.logo:hover,
+.logo:focus {
+    background: #232347;
+    box-shadow: 0 4px 16px rgba(97, 218, 251, 0.13);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        max-width: 98vw;
+        left: 50%;
+        top: 10px;
+        border-radius: 14px;
+    }
+    .logo {
+        border-radius: 7px;
+        padding: 2px 7px 2px 2px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        max-width: 99vw;
+        left: 50%;
+        top: 4px;
+        border-radius: 10px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+        min-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+    .logo {
+        border-radius: 5px;
+        padding: 1px 4px 1px 1px;
+        margin-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        height: 44px;
+    }
+    .logo img {
+        height: 38px;
+        width: auto;
+        min-width: 38px;
+        margin-right: 0;
+    }
+    .navbar-toggle {
+        display: flex !important;
+        align-items: flex-start;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        margin-left: 0;
+        z-index: 1001;
+        transition: color 0.2s;
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        margin-top: 2px;
+        /* Moves the hamburger icon up a bit */
+    }
+    .navbar-toggle:focus {
+        outline: 2px solid #61dafb;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        margin-right: 0;
+        padding: 0.7rem 4vw 0.7rem 4vw;
+        width: 85vw;
+        max-width: 340px;
+        background: linear-gradient(120deg, #232347 0%, #3e2067 100%);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(30, 40, 80, 0.13);
+        position: absolute;
+        top: 110%;
+        right: 2vw;
+        left: auto;
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s, top 0.3s, height 0.3s;
+        height: auto;
+        min-height: unset;
+        max-height: 180px;
+        /* Limit dropdown height */
+        overflow-y: auto;
+    }
+    .navbar.open .nav-links {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+        animation: navLinksDrop 0.35s cubic-bezier(.77, 0, .18, 1);
+    }
+    @keyframes navLinksDrop {
+        from {
+            opacity: 0;
+            transform: translateY(-16px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+
+/* Hide toggle on desktop */
+
+.navbar-toggle {
+    display: none;
+}

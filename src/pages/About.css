@@ -1,0 +1,152 @@
+.about-main {
+    min-height: 100vh;
+    background: #18162b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.about-team-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 48px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.about-team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    max-width: 90vw;
+    background: none;
+    border-radius: 18px;
+    padding: 0;
+    transition: transform 0.28s cubic-bezier(.77, 0, .18, 1), box-shadow 0.28s, background 0.28s;
+    box-shadow: 0 2px 16px rgba(30, 40, 80, 0.10);
+    will-change: transform, box-shadow;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.about-team-card:visited,
+.about-team-card:active,
+.about-team-card:focus,
+.about-team-card:hover {
+    text-decoration: none;
+}
+
+.about-team-card:hover,
+.about-team-card:focus {
+    transform: translateY(-8px) scale(1.045) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(97, 218, 251, 0.13), 0 2px 16px rgba(30, 40, 80, 0.13);
+    background: rgba(97, 218, 251, 0.04);
+}
+
+.about-team-card:active {
+    transform: scale(0.98) translateY(2px);
+    box-shadow: 0 2px 8px rgba(97, 218, 251, 0.08);
+}
+
+.about-team-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    transition: box-shadow 0.28s, filter 0.28s, transform 0.28s;
+}
+
+.about-team-card:hover .about-team-img,
+.about-team-card:focus .about-team-img {
+    box-shadow: 0 8px 32px rgba(97, 218, 251, 0.18);
+    filter: brightness(1.07) saturate(1.15);
+    transform: scale(1.04) rotate(-2deg);
+}
+
+.about-team-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.about-team-desc {
+    color: #e2e0f7;
+    font-size: 1.05rem;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 90%;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .about-team-grid {
+        gap: 1.3rem;
+    }
+    .about-team-card {
+        width: 180px;
+    }
+    .about-team-title {
+        font-size: 2rem;
+        margin-bottom: 32px;
+    }
+    .about-team-desc {
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-team-title {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+    .about-team-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
+    }
+    .about-team-card {
+        width: 90vw;
+        max-width: 320px;
+        padding: 0;
+    }
+    .about-team-img {
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    .about-team-name {
+        font-size: 1.05rem;
+        margin-bottom: 7px;
+    }
+    .about-team-desc {
+        font-size: 0.93rem;
+    }
+}
