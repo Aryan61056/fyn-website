@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fyn-website/static/css/main.499fe3de.css",
-    "main.js": "/fyn-website/static/js/main.71662f56.js",
+    "main.js": "/fyn-website/static/js/main.f06d6b22.js",
     "static/media/team4.jpg": "/fyn-website/static/media/team4.e47d2d8aab48e6023dd9.jpg",
     "static/media/team1.jpg": "/fyn-website/static/media/team1.8474c0283353ce692c4b.jpg",
     "static/media/classroom.jpg": "/fyn-website/static/media/classroom.7f5220ed2c9dec40ae24.jpg",
@@ -10,10 +10,10 @@
     "static/media/team3.jpg": "/fyn-website/static/media/team3.cfecaa4f421e4d9bfdac.jpg",
     "index.html": "/fyn-website/index.html",
     "main.499fe3de.css.map": "/fyn-website/static/css/main.499fe3de.css.map",
-    "main.71662f56.js.map": "/fyn-website/static/js/main.71662f56.js.map"
+    "main.f06d6b22.js.map": "/fyn-website/static/js/main.f06d6b22.js.map"
   },
   "entrypoints": [
     "static/css/main.499fe3de.css",
-    "static/js/main.71662f56.js"
+    "static/js/main.f06d6b22.js"
   ]
 }
