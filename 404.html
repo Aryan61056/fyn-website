@@ -3,10 +3,12 @@
 
 <head>
     <script>
-        // Redirect all 404s to index.html, preserving path and hash for React Router
-        var pathname = location.pathname.replace(/^\/fyn-website/, '');
-        var newUrl = '/fyn-website/index.html' + pathname + location.search + location.hash;
-        location.replace(newUrl);
+        // Redirect all 404s to index.html, but only if not already there
+        var prefix = '/fyn-website/index.html';
+        if (!location.pathname.startsWith(prefix)) {
+            var newUrl = prefix + location.pathname.replace(/^\/fyn-website/, '') + location.search + location.hash;
+            location.replace(newUrl);
+        }
     </script>
 </head>
 
