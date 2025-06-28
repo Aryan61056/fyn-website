@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css';
-import './navbar.css'; 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
+import "./navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -11,9 +11,9 @@ const Navbar = () => {
 
   return (
     <div className="App">
-      <nav className={`navbar${open ? ' open' : ''}`}>
+      <nav className={`navbar${open ? " open" : ""}`}>
         <Link to="/" className="logo" onClick={handleNavClick}>
-          <img src={require('../images/FYNTransparentLogo.png')} alt="Logo" />
+          <img src={require("../images/FYNTransparentLogo.png")} alt="Logo" />
         </Link>
         <button
           className="navbar-toggle"
@@ -21,18 +21,22 @@ const Navbar = () => {
           onClick={() => setOpen((v) => !v)}
         >
           {/* Hamburger icon */}
-          <span style={{fontSize: '2rem', lineHeight: 1}}>&#9776;</span>
+          <span style={{ fontSize: "2rem", lineHeight: 1 }}>&#9776;</span>
         </button>
         <ul className="nav-links" onClick={handleNavClick}>
-          <li><a href="/">Home</a></li>
+          <li>
+            <a href="/">Home</a>
+          </li>
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li><a href="#">Programs</a></li>
+          <li>
+            <a href="/programs">Programs</a>
+          </li>
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

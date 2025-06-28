@@ -23,7 +23,11 @@ function Footer() {
               <button
                 className="footer-link-btn"
                 onClick={() =>
-                  window.open("https://www.instagram.com/fyn.academy", "_blank", "noopener noreferrer")
+                  window.open(
+                    "https://www.instagram.com/fyn.academy",
+                    "_blank",
+                    "noopener noreferrer"
+                  )
                 }
               >
                 Stay Updated!
@@ -39,7 +43,7 @@ function Footer() {
             <li>
               <button
                 className="footer-link-btn"
-                onClick={() => window.location.href = '/about'}
+                onClick={() => (window.location.href = "/about")}
               >
                 The Team
               </button>
