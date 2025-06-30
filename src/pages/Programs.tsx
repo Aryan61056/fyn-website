@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import "./Programs.css";
-const CLASSROOM_IMG = require("../images/classroom.jpg");
+const FLIER_IMG = require("../images/pythonPoster.png");
 
 function Programs() {
   return (
@@ -13,10 +13,24 @@ function Programs() {
           <h1>Programs</h1>
           <div className="programs-header-img-container">
             <img
-              src={CLASSROOM_IMG}
+              src={FLIER_IMG}
               alt="Classroom"
               className="programs-header-img"
             />
+            <p className="programs-image-desc">
+              Enroll for our Python Bootcamp today! Beginner-friendly, teaches
+              the basic concepts and how to make drawings with Turtle.
+              <br />
+              <span>
+                <button
+                  className="learn-more-btn"
+                  type="button"
+                  onClick={() => (window.location.hash = "#/python-bootcamp")}
+                >
+                  Learn More
+                </button>
+              </span>
+            </p>
           </div>
           <div className="programs-description-block">
             <h2 className="programs-description-heading">Why FYN Programs?</h2>
@@ -34,22 +48,21 @@ function Programs() {
             <div className="program-card">
               <h2>Intro to Python</h2>
               <p>
-                Start coding with Python, the world’s most popular beginner
-                language.
+                Join our beginner-friendly Python bootcamp from July 14, 2025 to July
+                18, 2025. Students will learn the foundations, conditionals, loops,
+                lists and the Turtle graphics library.
               </p>
-              <div className="program-card-details">
-                <ul>
-                  <li>No prior experience required</li>
-                  <li>Hands-on projects and games</li>
-                  <li>Build a strong foundation in logic and problem solving</li>
-                </ul>
-              </div>
+              <button
+                className="learn-more-btn"
+                type="button"
+                onClick={() => (window.location.hash = "#/python-bootcamp")}
+              >
+                Learn More
+              </button>
             </div>
             <div className="program-card program-card-disabled">
               <h2>Web Development</h2>
-              <p>
-                Learn to build modern websites and web apps from scratch.
-              </p>
+              <p>Learn to build modern websites and web apps from scratch.</p>
               <div className="program-card-details">
                 <ul>
                   <li>HTML, CSS, and JavaScript basics</li>
@@ -64,7 +77,8 @@ function Programs() {
             <div className="program-card program-card-disabled">
               <h2>Computer Science</h2>
               <p>
-                Explore the fundamentals of computer science and problem solving.
+                Explore the fundamentals of computer science and problem
+                solving.
               </p>
               <div className="program-card-details">
                 <ul>

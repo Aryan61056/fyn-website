@@ -69,16 +69,7 @@ function Footer() {
                 Instagram
               </button>
             </li>
-            <li>
-              <button
-                className="footer-link-btn"
-                onClick={() =>
-                  window.open("YOUR_LINK_HERE", "_blank", "noopener noreferrer")
-                }
-              >
-                Feedback
-              </button>
-            </li>
+            <li>Feedback</li>
           </ul>
         </div>
       </div>

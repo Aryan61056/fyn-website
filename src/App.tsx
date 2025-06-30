@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Programs from "./pages/Programs";
+import PythonBootcamp from "./pages/PythonBootcamp";
 
 const LOGO_SRC = require("./images/FYNTransparentLogo.png");
 const CLASSROOM_IMG = require("./images/classroom.jpg");
@@ -234,6 +235,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/programs" element={<Programs />} />
+        <Route path="/python-bootcamp" element={<PythonBootcamp />} />
       </Routes>
     </Router>
   );
