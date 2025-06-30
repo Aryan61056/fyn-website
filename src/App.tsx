@@ -7,6 +7,10 @@ import Footer from "./components/Footer";
 import Programs from "./pages/Programs";
 import PythonBootcamp from "./pages/PythonBootcamp";
 import PythonBootcampBanner from "./components/PythonBootcampBanner";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
+
 
 const LOGO_SRC = require("./images/FYNTransparentLogo.png");
 const CLASSROOM_IMG = require("./images/classroom.jpg");
