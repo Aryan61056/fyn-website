@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Programs from "./pages/Programs";
 import PythonBootcamp from "./pages/PythonBootcamp";
+import PythonBootcampBanner from "./components/PythonBootcampBanner";
 
 const LOGO_SRC = require("./images/FYNTransparentLogo.png");
 const CLASSROOM_IMG = require("./images/classroom.jpg");
@@ -197,6 +198,11 @@ function FAQSection() {
 }
 
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, 0);
+  }, []);
   return (
     <Router>
       <Navbar />
@@ -205,6 +211,7 @@ function App() {
           path="/"
           element={
             <main className="home-main">
+              <PythonBootcampBanner />
               <section className="intro-row">
                 <div className="intro-col">
                   <img
@@ -214,7 +221,7 @@ function App() {
                   />
                   <AnimatedTitle />
                   <p className="intro-desc">
-                    Personalized tutoring in math, science, and coding—designed
+                    Personalizied learning in math, science, and coding—designed
                     to build confidence, spark curiosity, and unlock each
                     student’s full potential. Learn today. Lead tomorrow.
                   </p>

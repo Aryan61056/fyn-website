@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import "./Programs.css";
 const FLIER_IMG = require("../images/pythonPoster.png");
 
 function Programs() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -25,7 +27,7 @@ function Programs() {
                 <button
                   className="learn-more-btn"
                   type="button"
-                  onClick={() => (window.location.hash = "#/python-bootcamp")}
+                  onClick={() => navigate("/python-bootcamp")}
                 >
                   Learn More
                 </button>
@@ -55,7 +57,7 @@ function Programs() {
               <button
                 className="learn-more-btn"
                 type="button"
-                onClick={() => (window.location.hash = "#/python-bootcamp")}
+                onClick={() => navigate("/python-bootcamp")}
               >
                 Learn More
               </button>

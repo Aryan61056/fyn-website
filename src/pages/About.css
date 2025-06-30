@@ -30,6 +30,8 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 72px;
+    /* Add extra space before the footer */
 }
 
 .about-team-card {
@@ -104,6 +106,297 @@
     text-decoration: none;
 }
 
+.about-fyn-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    margin: 48px 0 56px 0;
+    padding: 32px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.about-fyn-content {
+    flex: 1;
+    max-width: 520px;
+    animation: fadeInUp 1.1s cubic-bezier(.77, 0, .18, 1) 0.1s both;
+}
+
+.about-fyn-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #fff;
+    /* Changed from #22314a to white for visibility */
+    background: linear-gradient(90deg, #61dafb 30%, #e2e0f7 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 2px 12px #61dafb33);
+    text-shadow: 0 0 4px #61dafb66, 0 0 8px #e2e0f733;
+    animation: fadeInUp 1.2s cubic-bezier(.77, 0, .18, 1) 0.2s both, fynGlowSoft 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes fynGlowSoft {
+    0% {
+        text-shadow: 0 0 4px #61dafb66, 0 0 8px #e2e0f733;
+    }
+    100% {
+        text-shadow: 0 0 10px #61dafb44, 0 0 16px #e2e0f722;
+    }
+}
+
+.about-fyn-desc {
+    font-size: 1.15rem;
+    color: #f2f2f2;
+    /* Changed from #444c5e to light gray for visibility */
+    line-height: 1.7;
+    animation: fadeInUp 1.3s cubic-bezier(.77, 0, .18, 1) 0.3s both;
+}
+
+.about-fyn-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Reflection effect */
+}
+
+.about-fyn-image::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: 24px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.01) 80%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.about-fyn-image:hover::before {
+    opacity: 1;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(97, 218, 251, 0.25);
+    }
+    80% {
+        box-shadow: 0 0 0 24px rgba(97, 218, 251, 0.01);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(97, 218, 251, 0.0);
+    }
+}
+
+.about-fyn-image:active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(97, 218, 251, 0.18);
+    animation: ripple 0.5s cubic-bezier(.77, 0, .18, 1);
+    z-index: 3;
+}
+
+.about-fyn-image img {
+    animation: float 3.5s ease-in-out infinite, parallaxTilt 8s ease-in-out infinite, fadeInUp 1.1s cubic-bezier(.77, 0, .18, 1) 0.1s both;
+    transition: box-shadow 0.4s, filter 0.4s, transform 0.4s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+    border-radius: 24px;
+    background: #fff;
+    border: 2px solid #f2f2f2;
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
+}
+
+.about-fyn-image:hover img {
+    box-shadow: 0 0 48px 16px #61dafb88, 0 8px 32px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.13) saturate(1.18) drop-shadow(0 0 24px #61dafbcc);
+    transform: scale(1.13) rotate(-8deg);
+    animation: wiggle 0.7s cubic-bezier(.77, 0, .18, 1);
+    z-index: 3;
+}
+
+.about-fyn-image:active img {
+    transform: scale(0.97) rotate(-4deg);
+    box-shadow: 0 0 24px 6px #61dafb55, 0 4px 16px rgba(0, 0, 0, 0.18);
+    filter: brightness(1.05) saturate(1.05);
+    transition: box-shadow 0.18s, filter 0.18s, transform 0.18s;
+}
+
+.about-fyn-image img:not(:hover) {
+    transition: transform 0.5s cubic-bezier(.77, 0, .18, 1);
+    transform: scale(1.01) rotate(-2deg);
+}
+
+.about-fyn-logo {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 32% 68% 60% 40% / 50% 40% 60% 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border: 2px solid #f2f2f2;
+    animation: float 3.5s ease-in-out infinite, parallaxTilt 8s ease-in-out infinite;
+    transition: box-shadow 0.4s, filter 0.4s, transform 0.4s;
+    cursor: pointer;
+}
+
+.about-fyn-logo:hover {
+    animation-play-state: paused, paused, paused;
+    animation-name: float, parallaxTilt, fadeInUp, wiggle;
+    animation-duration: 3.5s, 8s, 1.1s, 0.7s;
+    animation-timing-function: ease-in-out, ease-in-out, cubic-bezier(.77, 0, .18, 1), cubic-bezier(.77, 0, .18, 1);
+    animation-iteration-count: infinite, infinite, 1, 1;
+    animation-fill-mode: both, both, both, both;
+    box-shadow: 0 0 48px 16px #61dafb88, 0 8px 32px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.13) saturate(1.18) drop-shadow(0 0 24px #61dafb88);
+    transform: scale(1.13) rotate(-8deg);
+    z-index: 3;
+}
+
+.about-fyn-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #f2f2f2;
+    animation: float 3.5s ease-in-out infinite, parallaxTilt 8s ease-in-out infinite;
+    transition: box-shadow 0.4s, filter 0.4s, transform 0.4s;
+    cursor: pointer;
+}
+
+.about-fyn-photo:hover {
+    animation-play-state: paused, paused, paused;
+    animation-name: float, parallaxTilt, fadeInUp, wiggle;
+    animation-duration: 3.5s, 8s, 1.1s, 0.7s;
+    animation-timing-function: ease-in-out, ease-in-out, cubic-bezier(.77, 0, .18, 1), cubic-bezier(.77, 0, .18, 1);
+    animation-iteration-count: infinite, infinite, 1, 1;
+    animation-fill-mode: both, both, both, both;
+    box-shadow: 0 0 48px 16px #61dafb88, 0 8px 32px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.13) saturate(1.18) drop-shadow(0 0 24px #61dafb88);
+    transform: scale(1.13) rotate(-8deg);
+    z-index: 3;
+}
+
+.about-fyn-teaching-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    object-position: 70% 20%;
+    /* Focus on a unique object, adjust as needed */
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #f2f2f2;
+    display: block;
+}
+
+.about-fyn-teaching-img-cropped {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 60% 10%;
+    /* More zoomed in and focused */
+    /* Larger, more prominent blob shape */
+    clip-path: path('M80,40 Q120,0 320,30 Q400,60 370,220 Q340,400 200,370 Q60,340 30,200 Q0,60 80,40 Z');
+    /* Fallback for browsers that do not support path() */
+    /* clip-path: ellipse(54% 50% at 55% 55%); */
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #f2f2f2;
+    display: block;
+}
+
+
+/* Animation keyframes */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-12px) scale(1.04);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes parallaxTilt {
+    0% {
+        transform: rotate(-2deg) scale(1);
+    }
+    20% {
+        transform: rotate(2deg) scale(1.03);
+    }
+    40% {
+        transform: rotate(-1deg) scale(1.01);
+    }
+    60% {
+        transform: rotate(2deg) scale(1.04);
+    }
+    80% {
+        transform: rotate(-2deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(-2deg) scale(1);
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: scale(1.08) rotate(-6deg);
+    }
+    20% {
+        transform: scale(1.13) rotate(-8deg);
+    }
+    40% {
+        transform: scale(1.09) rotate(-4deg);
+    }
+    60% {
+        transform: scale(1.12) rotate(-10deg);
+    }
+    80% {
+        transform: scale(1.10) rotate(-7deg);
+    }
+    100% {
+        transform: scale(1.08) rotate(-6deg);
+    }
+}
+
 
 /* Responsive */
 
@@ -120,6 +413,61 @@
     }
     .about-team-desc {
         font-size: 0.98rem;
+    }
+    .about-fyn-title {
+        font-size: 1.5rem;
+    }
+    .about-fyn-content {
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-fyn-section {
+        flex-direction: column;
+        gap: 24px;
+        padding: 18px 0 0 0;
+        align-items: stretch;
+    }
+    .about-fyn-content {
+        max-width: 100vw;
+        padding: 0 6vw;
+        text-align: center;
+    }
+    .about-fyn-title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    .about-fyn-desc {
+        font-size: 1rem;
+    }
+    .about-fyn-image {
+        width: 100vw;
+        max-width: 100vw;
+        justify-content: center;
+        margin: 0 auto 0 auto;
+        padding: 0 0 18px 0;
+    }
+    .about-fyn-image img {
+        width: 90vw;
+        max-width: 340px;
+        height: auto;
+        min-width: 160px;
+        min-height: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+    .about-fyn-teaching-img-cropped {
+        clip-path: none !important;
+        width: 90vw !important;
+        max-width: 340px;
+        height: auto !important;
+        min-width: 160px;
+        min-height: 120px;
+        object-fit: cover;
+        border-radius: 18px !important;
+        margin: 0 auto 12px auto;
+        display: block;
     }
 }
 
@@ -148,5 +496,12 @@
     }
     .about-team-desc {
         font-size: 0.93rem;
+    }
+    .about-fyn-teaching-img {
+        width: 90vw;
+        height: 50vw;
+        min-width: 180px;
+        min-height: 120px;
+        object-position: 70% 20%;
     }
 }

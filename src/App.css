@@ -3,7 +3,11 @@ html,
 body {
     width: 100vw;
     overflow-x: hidden;
-    /* Prevent horizontal scroll and white bar */
+    background: #1a162b;
+    /* Fill all white space with site background color */
+    scroll-behavior: auto;
+    margin-top: 40px;
+    /* Move everything down by the height of navbar + banner */
 }
 
 .App-header {
@@ -38,12 +42,17 @@ samp {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 80px;
+    padding-top: 0;
+    /* Remove extra padding */
     padding-left: 0;
     padding-right: 0;
     width: 100vw;
     box-sizing: border-box;
     overflow-x: hidden;
+    margin-top: 170px;
+    /* Add margin to offset fixed navbar + banner */
+    scroll-margin-top: 170px;
+    /* Ensure scrollTo anchors and page load offset by navbar+banner */
 }
 
 .intro-section {
@@ -116,7 +125,8 @@ samp {
     gap: 3.5rem;
     width: 100%;
     max-width: 1200px;
-    margin-top: 80px;
+    margin-top: 0;
+    /* Remove extra margin to eliminate white space */
     box-sizing: border-box;
     overflow-x: hidden;
     opacity: 0;
@@ -784,113 +794,114 @@ samp {
     }
 }
 
+
 /* Footer Styles */
 
 .fyn-footer {
-  background: #0a0717;
-  color: #fff;
-  padding: 60px 0 40px 0;
-  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-  letter-spacing: 0.01em;
-  width: 100%;
-  position: static;
-  left: 0;
-  right: 0;
-  margin-left: 0;
-  margin-right: 0;
-  box-sizing: border-box;
+    background: #0a0717;
+    color: #fff;
+    padding: 60px 0 40px 0;
+    font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+    letter-spacing: 0.01em;
+    width: 100%;
+    position: static;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 60px;
-  gap: 40px;
-  width: 100%;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-col {
-  flex: 1 1 0;
-  min-width: 180px;
+    flex: 1 1 0;
+    min-width: 180px;
 }
 
 .footer-brand {
-  max-width: 340px;
+    max-width: 340px;
 }
 
 .footer-logo {
-  width: 70px;
-  margin-bottom: 24px;
+    width: 70px;
+    margin-bottom: 24px;
 }
 
 .footer-desc {
-  color: #fff;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin: 0;
-  margin-bottom: 0;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 0;
 }
 
 .footer-col h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 32px;
-  color: #fff;
-  letter-spacing: 0.01em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 32px;
+    color: #fff;
+    letter-spacing: 0.01em;
 }
 
 .footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-col ul li {
-  font-size: 1.25rem;
-  margin-bottom: 32px;
-  color: #fff;
-  cursor: pointer;
-  transition: color 0.2s;
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s;
 }
 
 .footer-col ul li:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .footer-col ul li:hover {
-  color: #b3b3b3;
+    color: #b3b3b3;
 }
 
 .footer-link-btn {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
 }
 
 .footer-link-btn:hover,
 .footer-link-btn:focus {
-  text-decoration: underline;
-  color: #b3b3b3;
+    text-decoration: underline;
+    color: #b3b3b3;
 }
 
 @media (max-width: 900px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 48px;
-    padding: 0 24px;
-  }
-  .footer-col {
-    min-width: 0;
-  }
-  .footer-brand {
-    max-width: 100%;
-  }
+    .footer-content {
+        flex-direction: column;
+        gap: 48px;
+        padding: 0 24px;
+    }
+    .footer-col {
+        min-width: 0;
+    }
+    .footer-brand {
+        max-width: 100%;
+    }
 }

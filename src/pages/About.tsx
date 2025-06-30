@@ -5,11 +5,26 @@ import team2 from "../images/team/team2.jpg";
 import team3 from "../images/team/team3.jpg";
 import team4 from "../images/team/team4.jpg";
 import Footer from "../components/Footer";
+import logo from "../images/FYNTransparentLogo.png";
+import teaching from "../images/MxrMarsPics IMG 3497.jpeg";
+import PythonBootcampBanner from "../components/PythonBootcampBanner";
 
 function About() {
   return (
     <>
       <main className="about-main">
+        <section className="about-fyn-section">
+          <div className="about-fyn-content">
+            <h1 className="about-fyn-title">What is FYN?</h1>
+            <p className="about-fyn-desc">
+              FYN (Future You Now) is a student-led initiative dedicated to empowering young minds through accessible, high-quality education in coding, math, and science. Our mission is to inspire, teach, and support the next generation of innovators by providing engaging programs, hands-on learning, and a supportive community.
+            </p>
+          </div>
+          <div className="about-fyn-image">
+            <img src={teaching} alt="FYN Teaching" className="about-fyn-teaching-img about-fyn-teaching-img-cropped" />
+          </div>
+        </section>
+        <PythonBootcampBanner />
         <h1 className="about-team-title">Meet the FYN Team:</h1>
         <div className="about-team-grid">
           <a
