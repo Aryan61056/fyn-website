@@ -6,7 +6,8 @@
     transform: translateX(-50%);
     width: 600px;
     max-width: 90vw;
-    z-index: 1001;
+    z-index: 998;
+    /* Lower than navbar's 999 */
     background: linear-gradient(90deg, #2e2157 0%, #1a1836 100%);
     color: #6ee7ff;
     padding: 1.1rem 2rem;

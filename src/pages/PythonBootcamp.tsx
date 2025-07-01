@@ -7,6 +7,8 @@ import Day2Img from "../images/projects/Day2.png";
 import Day3Img from "../images/projects/Day3.png";
 import Day4Img from "../images/projects/Day4.png";
 import Day51Img from "../images/projects/Day5-1.png";
+import Day53Img from "../images/projects/Day5-3.png";
+
 
 const days = [
 	{
@@ -25,7 +27,6 @@ const days = [
 			"Basic math operations (+, -, *, /): order of operations, examples",
 			"Hands-on: Try-it-yourself mini exercises after each concept",
 			"Common errors and how to fix them (debugging basics)",
-,
 		],
 		bonus: [
 			"Why Python?",
@@ -153,7 +154,7 @@ const days = [
 		project: {
 			title: "Text-Based Adventure with Turtle Map",
 			description:
-				"Students create a choose-your-own-adventure game. User makes decisions using input. Use conditionals and loops for branching paths. Store inventory or checkpoints in a list. Draw simple map elements using Turtle (e.g., a cave is a triangle, a lake is a blue circle, etc.). Includes a showcase and feedback session.",
+				"Students create a choose-your-own-adventure game. User makes decisions using input. Use conditionals and loops for branching paths. Store inventory or checkpoints in a list. Draw simple map elements using Turtle (e.g., a cave is a triangle, a lake is a blue circle, etc.).",
 		},
 		outcomes: [
 			"Plan and build a complete Python project",
@@ -164,15 +165,16 @@ const days = [
 ];
 
 const gallery = [
-	{ src: Day1Img, caption: "Day 1: Mad Libs-style Story" },
-	{ src: Day2Img, caption: "Day 2: Quiz or Guessing Game" },
-	{ src: Day3Img, caption: "Day 3: Number Game or List App" },
-	{ src: Day4Img, caption: "Day 4: Turtle Graphics Art" },
-	{ src: Day51Img, caption: "Day 5: Final Project Showcase" },
+	{ src: Day1Img, caption: "Day 1: Mad Libs-style Story", dayIdx: 0 },
+	{ src: Day2Img, caption: "Day 2: Quiz or Guessing Game", dayIdx: 1 },
+	{ src: Day3Img, caption: "Day 3: Number Game or List App", dayIdx: 2 },
+	{ src: Day4Img, caption: "Day 4: Turtle Graphics Art", dayIdx: 3 },
+	{ src: Day53Img, caption: "Day 5: Final Project Showcase", dayIdx: 4 },
 ];
 
 function PythonBootcamp() {
 	const [expanded, setExpanded] = useState<number | null>(null);
+	const [activeGallery, setActiveGallery] = useState<number | null>(null);
 
 	return (
 		<>
@@ -189,6 +191,14 @@ function PythonBootcamp() {
 						<strong>5:00 PM to 6:30 PM</strong>. The bootcamp will be held
 						online, and will cost <strong>$60</strong>.
 					</p>
+					<a
+						href="http://app.fynacademy.org/signup"
+						className="bootcamp-signup-btn"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Sign Up for Bootcamp
+					</a>
 				</header>
 				<section className="python-bootcamp-days">
 					{days.map((day, idx) => (
@@ -267,18 +277,43 @@ function PythonBootcamp() {
 						bootcamp!
 					</p>
 					<div className="gallery-images">
-						{gallery.map((img, idx) => (
-							<figure className="gallery-figure" key={img.caption}>
-								<img
-									className="gallery-img"
-									src={img.src}
-									alt={img.caption}
-								/>
-								<figcaption className="gallery-caption">
-									{img.caption}
-								</figcaption>
-							</figure>
-						))}
+						{gallery.map((img, idx) => {
+							const projectDesc = days[img.dayIdx]?.project?.description;
+							return (
+								<figure
+									className={`gallery-figure${
+										activeGallery === idx ? " active" : ""
+									}`}
+									key={img.caption}
+									tabIndex={0}
+									onMouseEnter={() => setActiveGallery(idx)}
+									onMouseLeave={() => setActiveGallery(null)}
+									onFocus={() => setActiveGallery(idx)}
+									onBlur={() => setActiveGallery(null)}
+									onClick={() =>
+										setActiveGallery(activeGallery === idx ? null : idx)
+									}
+								>
+									<img
+										className="gallery-img"
+										src={img.src}
+										alt={img.caption}
+									/>
+									<figcaption className="gallery-caption">
+										{img.caption}
+									</figcaption>
+									{projectDesc && (
+										<div
+											className={`gallery-description${
+												activeGallery === idx ? " show" : ""
+											}`}
+										>
+											{projectDesc}
+										</div>
+									)}
+								</figure>
+							);
+						})}
 					</div>
 				</section>
 			</main>

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
 import "./Programs.css";
-const FLIER_IMG = require("../images/pythonPoster.png");
 
 function Programs() {
   const navigate = useNavigate();
@@ -13,27 +12,6 @@ function Programs() {
       <main className="programs-main">
         <header className="programs-header">
           <h1>Programs</h1>
-          <div className="programs-header-img-container">
-            <img
-              src={FLIER_IMG}
-              alt="Classroom"
-              className="programs-header-img"
-            />
-            <p className="programs-image-desc">
-              Enroll for our Python Bootcamp today! Beginner-friendly, teaches
-              the basic concepts and how to make drawings with Turtle.
-              <br />
-              <span>
-                <button
-                  className="learn-more-btn"
-                  type="button"
-                  onClick={() => navigate("/python-bootcamp")}
-                >
-                  Learn More
-                </button>
-              </span>
-            </p>
-          </div>
           <div className="programs-description-block">
             <h2 className="programs-description-heading">Why FYN Programs?</h2>
             <p className="programs-description">
@@ -47,7 +25,7 @@ function Programs() {
         </header>
         <section className="programs-cards-section">
           <div className="programs-cards">
-            <div className="program-card">
+            <div className="program-card intro-python-glow">
               <h2>Intro to Python</h2>
               <p>
                 Join our beginner-friendly Python bootcamp from July 14, 2025 to July
@@ -55,11 +33,11 @@ function Programs() {
                 lists and the Turtle graphics library.
               </p>
               <button
-                className="learn-more-btn"
+                className="learn-more-btn minimal-learn-more-btn highlight-learn-more-btn"
                 type="button"
                 onClick={() => navigate("/python-bootcamp")}
               >
-                Learn More
+                <span className="highlight-btn-text">Learn More</span>
               </button>
             </div>
             <div className="program-card program-card-disabled">

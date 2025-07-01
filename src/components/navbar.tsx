@@ -34,7 +34,7 @@ const Navbar = () => {
    <div className="App">
      <nav className={`navbar${open ? " open" : ""}`}>
        <a
-         href="https://app.fynacademy.org/"
+         href="http://app.fynacademy.org/"
          className="logo"
          onClick={handleNavClick}
          target="_blank"

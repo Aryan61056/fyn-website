@@ -273,6 +273,35 @@ body {
     color: #d1d0e5;
 }
 
+.bootcamp-signup-btn {
+    display: inline-block;
+    margin: 18px auto 0 auto;
+    padding: 0.8em 2.2em;
+    font-size: 1.18rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #232347;
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(255, 204, 51, 0.18), 0 1.5px 8px rgba(30, 40, 80, 0.10);
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+    animation: pulseHighlight 1.5s infinite;
+    z-index: 1;
+}
+
+.bootcamp-signup-btn:hover,
+.bootcamp-signup-btn:focus {
+    background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
+    color: #1a162b;
+    box-shadow: 0 8px 32px rgba(255, 204, 51, 0.22);
+    transform: translateY(-2px) scale(1.04);
+    outline: none;
+}
+
 @media (max-width: 768px) {
     .python-bootcamp-main {
         padding: 18px 2vw 32px 2vw;
@@ -328,6 +357,16 @@ body {
     flex-direction: column;
     align-items: center;
     width: 300px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-figure.active,
+.gallery-figure:focus-within,
+.gallery-figure:hover {
+    transform: scale(1.03);
+    z-index: 2;
 }
 
 .gallery-img {
@@ -341,9 +380,60 @@ body {
     background: #2d2a3d;
 }
 
-.gallery-caption {
-    color: #bdbde6;
-    font-size: 1.08rem;
+.gallery-description {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.3s;
+    background: rgba(36, 31, 58, 0.97);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(97, 218, 251, 0.18);
+    padding: 18px 18px 14px 18px;
     margin-top: 10px;
+    font-size: 1.05rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    border: 2px solid #6a5acd;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.gallery-description.show {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 300px;
+    animation: fadeIn 0.4s;
+}
+
+.gallery-caption {
+    color: #fff;
+    font-size: 1.18rem;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 4px;
     text-align: center;
+    text-shadow: 0 2px 8px #23234788, 0 1px 0 #0004;
+    letter-spacing: 0.5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 768px) {
+    .gallery-figure {
+        width: 98vw;
+        max-width: 98vw;
+    }
+    .gallery-img {
+        width: 98vw;
+        max-width: 98vw;
+    }
+    .gallery-description {
+        font-size: 0.98rem;
+        padding: 14px 8px 10px 8px;
+    }
 }
