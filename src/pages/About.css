@@ -88,7 +88,7 @@
 
 .about-team-name {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
     margin-bottom: 10px;
@@ -152,6 +152,13 @@
     font-size: 1.15rem;
     color: #f2f2f2;
     /* Changed from #444c5e to light gray for visibility */
+    line-height: 1.7;
+    animation: fadeInUp 1.3s cubic-bezier(.77, 0, .18, 1) 0.3s both;
+}
+
+.about-fyn-desc-main {
+    font-size: 1.35rem;
+    color: #f2f2f2;
     line-height: 1.7;
     animation: fadeInUp 1.3s cubic-bezier(.77, 0, .18, 1) 0.3s both;
 }
@@ -327,6 +334,24 @@
     background: #fff;
     border: 2px solid #f2f2f2;
     display: block;
+}
+
+.about-story-img-rect {
+    border-radius: 18px;
+    object-fit: cover;
+    width: 420px;
+    height: 260px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+    background: #232347;
+    margin-top: 0;
+}
+
+@media (max-width: 900px) {
+    .about-story-img-rect {
+        width: 90vw;
+        max-width: 98vw;
+        height: 180px;
+    }
 }
 
 

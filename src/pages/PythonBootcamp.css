@@ -118,17 +118,16 @@ body {
 }
 
 .bootcamp-day.expanded {
-    max-height: 4000px;
+    max-height: 2000px;
 }
 
 .bootcamp-day.expanded .bootcamp-day-details {
     opacity: 1;
-    max-height: 3800px;
+    max-height: 1800px;
     margin-top: 20px;
     pointer-events: auto;
     color: #fff;
     animation: fadeIn 0.5s;
-    overflow: visible;
 }
 
 @keyframes fadeIn {
@@ -144,7 +143,6 @@ body {
 
 .bootcamp-day-details {
     padding-bottom: 18px;
-    overflow: visible;
 }
 
 .bootcamp-day-details ul {
@@ -319,7 +317,7 @@ body {
         padding: 18px 12px 0 12px;
     }
     .bootcamp-day.expanded {
-        max-height: 4000px;
+        max-height: 400px;
     }
 }
 
@@ -429,22 +427,13 @@ body {
     .gallery-figure {
         width: 98vw;
         max-width: 98vw;
-        min-width: 0;
     }
     .gallery-img {
         width: 98vw;
         max-width: 98vw;
-        min-width: 0;
-        height: auto;
-        max-height: 50vw;
-        object-fit: contain;
     }
     .gallery-description {
         font-size: 0.98rem;
         padding: 14px 8px 10px 8px;
-        position: static;
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: 10px;
     }
 }
