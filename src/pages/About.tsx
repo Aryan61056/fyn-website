@@ -49,7 +49,7 @@ function About() {
             <p className="about-fyn-desc">
               FYN's journey began in one small garage. A group of friends came
               together to brainstorm ways to give back to their community. The
-              spark that started it all came from Moksh Joshi, whose vision
+              spark that started it all came from Aarav Mishra, whose vision
               inspired the team to take action. Together, they recognized the
               impact they could make by helping youth build technical skills for
               the future.

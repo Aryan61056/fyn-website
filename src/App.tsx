@@ -248,6 +248,8 @@ function App() {
         <Route path="/programs" element={<Programs />} />
         <Route path="/python-bootcamp" element={<PythonBootcamp />} />
       </Routes>
+      <Analytics />
+      <SpeedInsights />
     </Router>
   );
 }
